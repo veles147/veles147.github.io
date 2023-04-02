@@ -23,6 +23,43 @@
             </div>
         </div>
     </div>
+
+    <div class="btn btn--success">Show success toast</div>
+    <div class="btn btn--error">Show error toast</div>
     
+    <script>
+        function toast({
+            title: '',
+            message: '',
+            type: 'info',
+            duration = 3000
+        }) {
+            const main = document.getElementById('toast');
+                if(main){
+                    const toast = document.createElement('div');
+
+                    toast.classList.add('toast');
+                    toast.innerHTML = '
+                        <div class="toast__icon">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="toast__body">
+                                <h3 class="toast__title">Success</h3>
+                                < p class="toast__mgs">Thành con mẹ nó công rồi</p>
+                        </div>
+                        <div class="toast__close">
+                <                   i class="fa-solid fa-xmark"></i>
+                        </div>
+                        ';
+                }
+        }
+
+        toast({
+            title: 'Success',
+            message: 'Thành con mẹ nó công rồi',
+            type: 'success',
+            duration: 3000
+        })
+    </script>
 </body>
 </html>
